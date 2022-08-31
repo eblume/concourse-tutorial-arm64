@@ -19,7 +19,7 @@ jobs:
     config:
       platform: linux
       image_resource:
-        type: docker-image
+        type: repository-image
         source: {repository: busybox}
       run:
         path: env

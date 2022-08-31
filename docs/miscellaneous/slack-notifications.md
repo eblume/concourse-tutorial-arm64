@@ -28,7 +28,7 @@ jobs:
       config:
         platform: linux
         image_resource:
-          type: docker-image
+          type: repository-image
           source: {repository: busybox}
         inputs:
         - name: tutorial
@@ -57,7 +57,7 @@ Specifically for Slack there is a custom Resource Type `cfcommunity/slack-notifi
 ```yaml
 resource_types:
 - name: slack-notification
-  type: docker-image
+  type: repository-image
   source:
     repository: cfcommunity/slack-notification-resource
 ```
@@ -175,7 +175,7 @@ jobs:
     config:
       platform: linux
       image_resource:
-        type: docker-image
+        type: repository-image
         source: {repository: busybox}
       inputs:
       - name: tutorial

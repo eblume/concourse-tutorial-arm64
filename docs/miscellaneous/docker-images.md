@@ -1,5 +1,17 @@
 # Create and Use Docker Images
 
+Warning: arm64 variant
+----------------------
+
+Before you get started, please note that this file (and many others) have been lightly edited as part of the arm64
+variation for this concourse tutorial. I did not spend very much time checking for consistency beyond simple
+find-replace editing. It's possible that some of the changes are problematic. For the most part, these changes should be
+limited to swapping `type: docker-image` to `type: registry-image` as the arm64 builds I am targeting do not provide a
+`docker-image` resource.
+
+Intro
+-----
+
 This section will show how to take a Dockerfile project, build it and push to Docker Hub.
 
 ![docker-push](/images/docker-push.png)
@@ -44,7 +56,7 @@ resources:
     branch: develop
 
 - name: hello-world-docker-image
-  type: docker-image
+  type: repository-image
   source:
     email: ((docker-hub-email))
     username: ((docker-hub-username))
@@ -107,7 +119,7 @@ We can now use the Docker image as the base image for tasks.
     config:
       platform: linux
       image_resource:
-        type: docker-image
+        type: repository-image
         source:
           repository: ((docker-hub-username))/concourse-tutorial-hello-world
       run:

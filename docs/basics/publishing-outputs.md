@@ -110,7 +110,7 @@ The Docker image being used is described in the `image_resources` section of the
     config:
       platform: linux
       image_resource:
-        type: docker-image
+        type: repository-image
         source: { repository: starkandwayne/concourse }
 ```
 

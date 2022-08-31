@@ -20,7 +20,7 @@ Update the `publishing-outputs` pipeline with a second job `job-show-date` which
     config:
       platform: linux
       image_resource:
-        type: docker-image
+        type: repository-image
         source: {repository: busybox}
       inputs:
         - name: resource-gist

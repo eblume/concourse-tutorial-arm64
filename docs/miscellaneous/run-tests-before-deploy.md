@@ -33,7 +33,7 @@ For convenience, we're reusing the `tutorials/basic/job-inputs/task-run-tests.sh
       platform: linux
 
       image_resource:
-        type: docker-image
+        type: repository-image
         source: {repository: golang, tag: 1.9-alpine}
 
       inputs:

@@ -17,7 +17,7 @@ The task file `task_run_tests.yml` includes:
 
 ```yaml
 image_resource:
-  type: docker-image
+  type: repository-image
   source: {repository: golang, tag: 1.9-alpine}
 
 inputs:
